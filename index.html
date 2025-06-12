@@ -14,8 +14,8 @@
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
             <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Projects</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
@@ -25,48 +25,134 @@
         </div>
       </div>
     </div>
-    <!-- <--------------------------------About Section -----------------------------------> 
+    <!-- <--------------------------------About Section ----------------------------------->
     <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                  <img src="images/UserImage.jpg">
-                </div>
-                <div class="about-col-2">
-                  <h1 class="sub-title">About Me </h1>
-                  <p>Hi, I'm Shubham Dongare, a Front-End Developer passionate about building clean and user-friendly interfaces. 
-                    I have experience working with HTML, CSS, JavaScript, React, and Material UI, along with Git and GitHub for version control. 
-                    I enjoy turning ideas into interactive and responsive web experiences.
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/UserImage.jpg" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              Hi, I'm Shubham Dongare, a Front-End Developer passionate about
+              building clean and user-friendly interfaces. I have experience
+              working with HTML, CSS, JavaScript, React, and Material UI, along
+              with Git and GitHub for version control. I enjoy turning ideas
+              into interactive and responsive web experiences. Let's build
+              something amazing together.
+            </p>
 
-                    Let's build something amazing together. </p>
-
-                    <div class="tab-titles">
-                      <p class="tab-links active-link" onclick="openTab('experience')">Experiance</p>
-                      <p class="tab-links " onclick="openTab('skills')">Skills</p>
-                      <p class="tab-links" onclick="openTab('education')">Education</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="experience">
-                      <ul>
-                        <li><span>2023 - Current</span><br>UI Developer at B2A Tech Jaysingpur</li>
-                      </ul>
-                    </div>
-                    <div class="tab-contents" id="skills">
-                      <ul>
-                        <li><span>UI/UX</span><br>Design and Develope Web/App interfaces</li>
-                        <li><span>Web Development</span><br>Web App Development</li>
-                      </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                      <ul>
-                        <li><span>Oct 2022</span><br>PG-DAC from CDAC Bangalore</li>
-                        <li><span>June 2020</span><br>PGDM in Project Management from infini institute Pune</li>
-                        <li><span>July 2018</span><br>BE Civil from Shivaji University Kolhapur</li>
-                      </ul>
-                    </div>
-                </div>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="openTab('experience')">
+                Experiance
+              </p>
+              <p class="tab-links" onclick="openTab('skills')">Skills</p>
+              <p class="tab-links" onclick="openTab('education')">Education</p>
             </div>
+            <div class="tab-contents active-tab" id="experience">
+              <ul>
+                <li>
+                  <span>March 2023 - Current</span><br />
+                  (UI Developer at B2A Tech Jaysingpur)
+                </li>
+              </ul>
+              <h3>Projects info: DhanMan</h3>
+              <ul class="project-list">
+                <li>
+                  Inventory & Payroll Systems - Dynamic forms, tables and lists,
+                  real-time data.
+                </li>
+                <li>
+                  Billing & Accounting - Invoice & Bill management, Ledger
+                  Reports, financial dashboards.
+                </li>
+                <li>
+                  Apartment Finance - Resident billing & invoices, importing
+                  monthly bill & invoice, importing monthly payments
+                </li>
+                <h3>Projects info: Dvarpal</h3>
+                <li>
+                  Dvarpal (Community Management) - Gate staff tools, Visitor
+                  approval system, Vehicle & daily help tracking.
+                </li>
+              </ul>
+              <h3>Tech Stack:</h3>
+              <ul class="project-list">
+                <li>
+                  React.js, TypeScript, Formik, Yup, Recharts, Material-UI,
+                  ASP.NET Core API Integrations.
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Technical Skills</span><br />React JS, HTML5, CSS,
+                  Bootstrap, JavaScript,React Native Material UI, Git and GitHub
+                </li>
+                <li>
+                  <span>Soft Skills</span><br />Management Skills, Good
+                  Communication, Ability to rapidly build connection and set up
+                  trust
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>Oct 2022</span><br />PG-DAC from CDAC Bangalore</li>
+                <li>
+                  <span>June 2020</span><br />PGDM in Project Management from
+                  infini institute Pune
+                </li>
+                <li>
+                  <span>July 2018</span><br />BE Civil from Shivaji University
+                  Kolhapur
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+
+    <!-- ---------------------------------Portfolio---------------------------------------------------- -->
+
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work"><img src="images/work1.png" alt="Work 1" /></div>
+          <div class="work"><img src="images/work2.png" alt="Work 2" /></div>
+          <div class="work"><img src="images/work3.png" alt="Work 3" /></div>
+          <div class="work"><img src="images/work4.png" alt="Work 4" /></div>
+          <div class="work"><img src="images/work5.png" alt="Work 5" /></div>
+          <div class="work"><img src="images/work6.png" alt="Work 6" /></div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
+
+<!-- --------------------------------- Contact ---------------------------------------------------- -->
+
+<script>
+  var tabLinks = document.getElementsByClassName("tab-links");
+  var tabContents = document.getElementsByClassName("tab-contents");
+
+  function openTab(tabName) {
+    for (tabLink of tabLinks) {
+      tabLink.classList.remove("active-link");
+    }
+    for (tabContent of tabContents) {
+      tabContent.classList.remove("active-tab");
+    }
+
+    event.currentTarget.classList.add("active-link");
+
+    document.getElementById(tabName).classList.add("active-tab");
+  }
+</script>
