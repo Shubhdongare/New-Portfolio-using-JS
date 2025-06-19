@@ -14,7 +14,6 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    /* background-image: url(images/background-image.jpg); */
     background-color: #080808;
     background-size: cover;
     background-position: center;
@@ -23,11 +22,17 @@ body{
     padding: 10px 10%;
 }
 
-nav{
+nav {
     display: flex;
+    justify-content: flex-end;  
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 10%;
+    background-color: #080808;
+    z-index: 1000;
 }
 
 .logo{
@@ -66,6 +71,7 @@ nav ul li a:hover::after{
 }
 
 .header-text{
+    flex: 1;
 margin-top: 20%;
 font-size: 30px;
 }
@@ -163,10 +169,77 @@ ul.project-list li {
     margin-bottom: 10px;
 }
 
+.edu-date {
+  color: #ff004f;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.edu-detail {
+  color: white;
+  font-size: 18px;
+}
+
+.skill-title {
+  color: #ff004f;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.skill-detail {
+  color: white;
+  font-size: 18px;
+}
+
+ul li {
+  margin-bottom: 15px;
+}
+
+.exp-date {
+  color: #ff004f;
+  font-weight: bold;
+
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.exp-role {
+  font-style: italic;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.project-block {
+  margin-top: 15px;
+}
+
+.project-title,
+.tech-title {
+  font-weight: bold;
+  margin: 10px 0 5px;
+  font-size: 20px;
+}
+
+.project-list li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.tech-detail {
+  color: white;
+  margin-top: 5px;
+}
+
+
+
 /* ------------------------------------portfolio----------------------------------------- */
 
 #portfolio{
-    padding: 40px 0;
+    padding: 80px 0;
+    margin-top: 60px;
 }
 
 .work-list {
@@ -191,7 +264,7 @@ ul.project-list li {
 /* ------------------------------------contact----------------------------------------- */
 .contact-left{
     flex-basis: 35%;
-    margin-top: 70px; 
+    margin-top: 90px; 
 }
 .contact-right{
     flex-basis: 60%;
