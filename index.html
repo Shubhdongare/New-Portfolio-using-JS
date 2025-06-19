@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -11,13 +12,15 @@
       <div class="container">
         <nav>
           <img src="images/Welcome.png" class="logo" />
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+          <ul id="sideMenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <!-- <li><a href="#projects">Projects</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
           </ul>
+          <i class="fa-solid fa-bars" onclick="openMenu()"></i>
         </nav>
         <div class="header-text">
           <p>Web Developer</p>
@@ -134,10 +137,39 @@
     </div>
 
     <script src="script.js"></script>
-  </body>
-</html>
+
 
 <!-- --------------------------------- Contact ---------------------------------------------------- -->
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+        <h1 class="sub-title">Contact Me</h1>
+      </br>
+        <h3>
+          <i class="fa-solid fa-paper-plane"></i>shubhamdongare2511@gmail.com
+        </h3>
+      </br>
+        <h3><i class="fa-solid fa-phone"></i></i>+91 7038437761</h3>
+       </br>
+        <a href="images/Shubham_Dongare_Updated_Resume.pdf" download class="btn">Download CV </a>
+      </div>
+
+      <div class="contact-right">
+      <form name="submit-to-google-sheet">
+        <input type="text" name="Name" placeholder="Your Name" required />
+        <input type="email" name="Email" placeholder="Your Email" required />
+        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+        <button type="submit" class="btn">Submit</button>
+        <span id="msg"></span>
+      </form>
+      
+          </div>
+
+    </div>
+  </div>
+  
+</div>
 
 <script>
   var tabLinks = document.getElementsByClassName("tab-links");
@@ -156,3 +188,46 @@
     document.getElementById(tabName).classList.add("active-tab");
   }
 </script>
+
+<script>
+   var sidemenu = document.getElementById("sideMenu");
+   
+   function openMenu(){
+    sidemenu.style.right = "0";
+   }
+
+function closeMenu(){
+    sidemenu.style.right = "-200px";
+   }
+
+</script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxpjv8x3wct_2AC8REf2VLqcWVjaGCfLdV0UFxv8aqiXe43QphoV_XcbNWatFWgBBaG0g/exec'
+  const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("msg")
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+
+     msg.innerHTML = "Submitting...";
+  msg.style.color = "orange";
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Form submitted successfully";
+          msg.style.color = "lightgreen";
+        form.reset();
+
+        setTimeout(function(){
+          msg.innerHTML = "";
+           msg.style.color = "";
+        }, 5000);
+      })
+      .catch(error => {
+      msg.innerHTML = "Error submitting form. Please try again.";
+      msg.style.color = "red";
+      console.error('Error!', error.message);
+    });
+  })
+</script>
+  </body>
+</html>
